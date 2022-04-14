@@ -32,7 +32,7 @@ export class MqttService {
     });
   }
 
-  publish(topic: string, message: string | Buffer | object, opts?: IClientPublishOptions): Promise<Packet> {
+  publish(topic: string, message: string | Buffer, opts?: IClientPublishOptions): Promise<Packet> {
     return new Promise<Packet>((resolve, reject) => {
       this.client.publish(topic, message, opts || null, (error, packet) => {
         if (error) {
