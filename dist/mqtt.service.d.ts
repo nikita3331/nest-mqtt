@@ -5,5 +5,5 @@ export declare class MqttService {
     constructor(client: Client);
     subscribe(topic: string | string[], opts?: IClientSubscribeOptions): Promise<ISubscriptionGrant[]>;
     unsubscribe(topic: string, opts?: Record<string, any>): Promise<Packet>;
-    publish(topic: string, message: string | Buffer, opts?: IClientPublishOptions): Promise<Packet>;
+    publish(topic: string, message: string | Buffer | Uint8Array, opts?: IClientPublishOptions): Promise<Packet>;
 }
